@@ -1,0 +1,11 @@
+channels:
+  - conda-forge
+dependencies:
+  - python>3.10
+  - jupyter
+  - jupyterlab>3
+  - ipython
+  - numpy
+  - matplotlib
+  - cartopy
+  - pyearth
