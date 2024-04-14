@@ -19,8 +19,8 @@ cd build                             # Switch into build directory
 cmake -DCMAKE_BUILD_TYPE=Release ..  # Prepare to compile
 make                                 # Build code.
 #make install                         # Optionally install on your machine
-# Copy the dggrid binary to /usr/local/bin.
-cp src/apps/dggrid/dggrid /usr/local/bin/
+# Copy the dggrid binary to /home/jovyan/.
+cp src/apps/dggrid/dggrid /home/jovyan/
 sFolder_bin=src/apps/dggrid
 cd $sFolder_bin
 ./dggrid -v
