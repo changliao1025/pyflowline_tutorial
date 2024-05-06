@@ -1,7 +1,16 @@
+name: python 3.10
 channels:
   - conda-forge
 dependencies:
-  - python>3.10
+  - python
+  - jupyterlab
   - cmake
   - make
-
+  - numpy
+  - gdal
+  - matplotlib
+  - cartopy
+  - geopandas
+  - libgdal-arrow-parquet
+  - pyearth=0.1.25
+  - pyflowline=0.3.8
