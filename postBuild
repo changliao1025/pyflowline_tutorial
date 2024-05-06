@@ -12,7 +12,7 @@ fi
 #clone a git repo to the external folder
 sDggrid_url='https://github.com/sahrk/DGGRID.git'
 git clone $sDggrid_url
-#change directory to the DGGRID folder  
+#change directory to the DGGRID folder
 cd DGGRID                         # enter the cloned repo
 mkdir build                          # Make a directory to compile into
 cd build                             # Switch into build directory
@@ -25,3 +25,5 @@ sFolder_bin=src/apps/dggrid
 cd $sFolder_bin
 ./dggrid -v
 ./dggrid -h
+
+echo "dggrid model is compiled successfully!"
