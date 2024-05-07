@@ -1,0 +1,16 @@
+[
+    {
+        "dLatitude_outlet_degree": 39.462,
+        "dLongitude_outlet_degree": -76.0093,
+        "dAccumulation_threshold": 100000,
+        "dThreshold_small_river": 10000,
+        "iFlag_dam": 0,
+        "iFlag_debug": 1,
+        "iFlag_disconnected": 0,
+        "lBasinID": 1,
+        "sFilename_dam": "dams.csv",
+        "sFilename_flowline_filter": "/Users/coop558/myprojects/python/pyflowline_tutorial/data/susquehanna/input/flowline.geojson",
+        "sFilename_flowline_raw": "allflowline.shp",
+        "sFilename_flowline_topo": "flowline.csv"
+    }
+]

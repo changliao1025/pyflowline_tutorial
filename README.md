@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/changliao1025/pyflowline_tutorial/main?labpath=notebooks%2Fdggrid%2Fdggrid_example.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/changliao1025/pyflowline_tutorial/main?labpath=notebooks%2Fdggrid%2Fdggrid_example.ipynb) (right click to open in a new window)
 
 # Introduction
 
@@ -6,50 +6,47 @@ This is a short course for the PyFlowline model.
 
 PyFlowline: a mesh independent river network generator for hydrologic models.
 
-For full details of the model, please refer to our papers and the PyFlowline documentation (https://pyflowline.readthedocs.io/).
+For full details of the model, please refer to our papers and the PyFlowline [documentation](https://pyflowline.readthedocs.io/).
 
 # Requirements
 
-You need internet connection to install the  through the Python Pip or Conda (recommended) system.
+You need an internet connection to install the package using Python Pip or Conda (recommended).
 
-You can use the Visual Studio Code to run the Python examples.
+You can use Visual Studio Code to run the Python examples.
 
 You can use QGIS to visualize some of the model results.
 
 # Step-by-step instruction
 
+1. Create a conda environment named `pyflowline`, and install the `pyflowline` package.
 
-1. Install the pyflowline Python package through Conda
+  ```bash
+  conda create --name pyflowline -c conda-forge python pyflowline
+  conda activate pyflowline
+  conda install -c conda-forge numpy gdal matplotlib cartopy geopandas netCDF4 
+  ```
 
-- `conda create --name pyflowline python`
+2. Download this tutorial.
 
-- `conda activate pyflowline`
+   ```bash
+   git clone https://github.com/changliao1025/pyflowline_tutorial.git
+   ```
 
-- `conda install -c conda-forge pyflowline`
+3. Run the examples within the `example` folder.
 
-2. Download this tutorial
-
-   `git clone https://github.com/changliao1025/pyflowline_tutorial.git`
-
-3. Run the examples within the `example` folder
-
-- Edit the template `configuration` json file to match with your data set paths.
-
-4. View and visualize model output files.
-   
-- View normal json file using any text editor such as VS Code.
-
-- Visualize `geojson` files using `QGIS`. 
-  
+   - Edit the template `configuration` json file to match with your data set paths.
+   - View and visualize model output files.
+   - View normal json file using any text editor such as VS Code.
+   - Visualize `geojson` files using `QGIS`.  
 
 # FAQ
 
 1. Why import `GDAL` failed?
-   
+
    Consider using the `conda-forge` channel.
 
-2. `proj` related issue https://github.com/OSGeo/gdal/issues/1546, 
-   
+2. `proj` related issue https://github.com/OSGeo/gdal/issues/1546
+
    Make sure you correctly set up the `PROJ_LIB`
 
    Because the `GDAL` library is used by this project and the `proj` library is often not configured correctly automatically. 
