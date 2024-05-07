@@ -1,5 +1,7 @@
 # pyflowline
+data/
 data/**/output/
+data/**/tmp/
 examples/**/output/
 examples/**/*.png
 
