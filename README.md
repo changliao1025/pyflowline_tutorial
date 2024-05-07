@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/changliao1025/pyflowline_tutorial/main?labpath=notebooks%2Fdggrid%2Fdggrid_example.ipynb) (right click to open in a new window)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/changliao1025/pyflowline_tutorial/HEAD?labpath=notebooks%2Fyukon%2Fdggrid_example.ipynb) (right click to open in a new window)
 
 # Introduction
 
@@ -23,7 +23,7 @@ You can use QGIS to visualize some of the model results.
   ```bash
   conda create --name pyflowline -c conda-forge python pyflowline
   conda activate pyflowline
-  conda install -c conda-forge numpy gdal matplotlib cartopy geopandas netCDF4 
+  conda install -c conda-forge numpy gdal matplotlib cartopy geopandas netCDF4
   ```
 
 2. Download this tutorial.
@@ -37,7 +37,7 @@ You can use QGIS to visualize some of the model results.
    - Edit the template `configuration` json file to match with your data set paths.
    - View and visualize model output files.
    - View normal json file using any text editor such as VS Code.
-   - Visualize `geojson` files using `QGIS`.  
+   - Visualize `geojson` files using `QGIS`.
 
 # FAQ
 
@@ -49,7 +49,7 @@ You can use QGIS to visualize some of the model results.
 
    Make sure you correctly set up the `PROJ_LIB`
 
-   Because the `GDAL` library is used by this project and the `proj` library is often not configured correctly automatically. 
+   Because the `GDAL` library is used by this project and the `proj` library is often not configured correctly automatically.
    On Linux or Mac, you can set it up using the `.bash_profile` such as:
 
    Anaconda:
@@ -61,9 +61,9 @@ You can use QGIS to visualize some of the model results.
    `export PROJ_LIB=/opt/miniconda3/envs/pyflowline/share/proj`
 
 3. What if my model doesn't produce the correct or expected answer?
-   
+
    Answer: There are several hidden assumptions within the workflow. For example, if you provide the DEM and river network for two different regions, the program won't be able to tell you that. A visual inspection of your data is important.
-   
+
    Optionally, you can turn on the `iFlag_debug` option in the configuration file to output the `intermediate files`.
 
 # References
