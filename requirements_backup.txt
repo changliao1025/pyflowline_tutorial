@@ -1,9 +1,0 @@
-numpy
-gdal
-matplotlib
-cartopy
-netCDF4
-geopandas
-libgdal-arrow-parquet
-pyearth
-pyflowline
