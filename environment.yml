@@ -1,4 +1,4 @@
-name: python 3.10
+name: pyflowline
 channels:
   - conda-forge
 dependencies:
