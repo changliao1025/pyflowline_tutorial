@@ -61,6 +61,7 @@ if os.path.exists(sWorkspace_input):
 # Copy all the files under the temp data folder using shutil
 shutil.copytree(sPath_temp_data, sWorkspace_input)
 
+shutil.rmtree(sPath_temp)
 
 sFilename_configuration_in = os.path.join(sWorkspace_input , 'pyhexwatershed_yukon_dggrid.json')
 sFilename_basins_in = os.path.join( sWorkspace_input , 'pyflowline_yukon_basins.json')
@@ -90,7 +91,7 @@ sDate = str(iYear) + str(iMonth).zfill(2) + str(iDay).zfill(2)
 from pyflowline.mesh.dggrid.create_dggrid_mesh import dggrid_find_resolution_by_index
 dResolution = dggrid_find_resolution_by_index(sDggrid_type,
                                               iResolution_index)
-print(dResolution)
+print('Mesh resolution is: ', dResolution, 'm')
 
 sFilename_configuration_copy = os.path.join(
     sWorkspace_output, 'pyflowline_configuration_copy.json')
@@ -105,11 +106,9 @@ copy2(sFilename_basins_in, sFilename_basins_configuration_copy)
 # The json file will be overwritten, you may want to make a copy of it first.
 sFilename_configuration = sFilename_configuration_copy
 sFilename_basins = sFilename_basins_configuration_copy
-
 # Output folder
 change_json_key_value(sFilename_configuration,
                                  'sWorkspace_output', sWorkspace_output)
-
 # Individual basin configuration file
 change_json_key_value(sFilename_configuration,
                                  'sFilename_basins', sFilename_basins)
@@ -146,9 +145,15 @@ oPyflowline.pyflowline_change_model_parameter('iFlag_debug', 0, iFlag_basin_in= 
 #setup the model
 oPyflowline.iFlag_user_provided_binary = 0
 oPyflowline.pyflowline_setup()
+#oPyflowline.plot( sVariable_in = 'flowline_filter' )
 oPyflowline.pyflowline_flowline_simplification()
+#oPyflowline.plot( sVariable_in = 'flowline_simplified' )
 oPyflowline.iFlag_mesh_boundary = 1
 aCell = oPyflowline.pyflowline_mesh_generation()
+#oPyflowline.plot( sVariable_in = 'mesh')
 oPyflowline.pyflowline_reconstruct_topological_relationship()
 oPyflowline.pyflowline_export()
+#oPyflowline.plot( sVariable_in = 'flowline_conceptual')
+oPyflowline.plot( sVariable_in = 'overlap')
 oPyflowline.pyflowline_export_config_to_json()
+print('Finished the simulation.')
