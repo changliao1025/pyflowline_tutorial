@@ -137,21 +137,29 @@ oPyflowline.pyflowline_change_model_parameter('sFilename_flowline_filter', sFile
 # Turn debugging off
 oPyflowline.pyflowline_change_model_parameter('iFlag_debug', 0, iFlag_basin_in=1)
 
-# Set this flag false if the dggrid binary is on the system path, to let pyflowline find it. Set this flag true if the path to the binary is set in the configuration file.
+# Set this flag false if the dggrid binary is on the system path, to let pyflowline find it. Set this flag true if the path to the binary file is set in the configuration file.
 oPyflowline.iFlag_user_provided_binary = 0
 
 #%% Setup the model
 
 oPyflowline.pyflowline_setup()
-#oPyflowline.plot( sVariable_in = 'flowline_filter' )
+oPyflowline.plot( sVariable_in = 'flowline_filter' )
+
+#%% Flowline simplification
 oPyflowline.pyflowline_flowline_simplification()
-#oPyflowline.plot( sVariable_in = 'flowline_simplified' )
+oPyflowline.plot( sVariable_in = 'flowline_simplified' )
+
+#%% Mesh generation
 oPyflowline.iFlag_mesh_boundary = 1
 aCell = oPyflowline.pyflowline_mesh_generation()
-#oPyflowline.plot( sVariable_in = 'mesh')
+oPyflowline.plot( sVariable_in = 'mesh')
 oPyflowline.pyflowline_reconstruct_topological_relationship()
+
+#%% Export the results
 oPyflowline.pyflowline_export()
-#oPyflowline.plot( sVariable_in = 'flowline_conceptual')
-# oPyflowline.plot( sVariable_in = 'overlap')
+oPyflowline.plot( sVariable_in = 'flowline_conceptual')
+oPyflowline.plot( sVariable_in = 'overlap')
 oPyflowline.pyflowline_export_config_to_json()
+
+# %%
 print('Finished the simulation.')
