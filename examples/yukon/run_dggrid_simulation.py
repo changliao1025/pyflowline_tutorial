@@ -18,7 +18,7 @@ logging.basicConfig(format='%(asctime)s %(message)s')
 logging.warning('is the time pyflowline simulation started.')
 
 #%% Set the path to dggrid
-sPath_dggrid_bin = '/Users/coop558/opt/DGGRID/build/src/apps/dggrid/' # "/qfs/people/liao313/bin/"
+sPath_dggrid_bin = "/qfs/people/liao313/bin/"
 os.environ["PATH"] += os.pathsep + sPath_dggrid_bin
 
 #%% Set workspace paths
