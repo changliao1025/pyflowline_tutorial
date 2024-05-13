@@ -14,5 +14,6 @@ dependencies:
   - cartopy
   - geopandas
   - libgdal-arrow-parquet
+  - python-dotenv
   - pyearth=0.1.26
   - pyflowline=0.3.10

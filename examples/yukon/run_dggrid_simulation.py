@@ -9,6 +9,7 @@ from datetime import date
 #import geopandas as gpd
 import matplotlib.pyplot as plt
 import logging
+from dotenv import load_dotenv
 
 #%% setup logging
 for handler in logging.root.handlers[:]:
@@ -18,8 +19,10 @@ logging.basicConfig(format='%(asctime)s %(message)s')
 logging.warning('is the time pyflowline simulation started.')
 
 #%% Set the path to dggrid
-sPath_dggrid_bin = "/qfs/people/liao313/bin/"
+load_dotenv()
+sPath_dggrid_bin = os.getenv('DGGRID_BINARY_PATH')
 os.environ["PATH"] += os.pathsep + sPath_dggrid_bin
+# Note - iFlag_user_provided_binary must be false
 
 #%% Set workspace paths
 sPath_parent = Path(__file__).resolve().parents[2]
@@ -106,8 +109,8 @@ copy2(sFilename_basins_in, sFilename_basins_configuration_copy)
 # The json file will be overwritten, you may want to make a copy of it first.
 sFilename_configuration = sFilename_configuration_copy
 sFilename_basins = sFilename_basins_configuration_copy
-from pyflowline.configuration.change_json_key_value import change_json_key_value
 
+from pyflowline.configuration.change_json_key_value import change_json_key_value
 change_json_key_value(sFilename_configuration, 'sWorkspace_output', sWorkspace_output) # Output folder
 change_json_key_value(sFilename_configuration, 'sFilename_basins', sFilename_basins) # Individual basin configuration file
 

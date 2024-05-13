@@ -35,7 +35,13 @@ You can use QGIS to visualize some of the model results.
    # By hand:
    conda create --name pyflowline_tutorial -c conda-forge python pyflowline
    conda activate pyflowline_tutorial
-   conda install -c conda-forge jupyterlab cmake make numpy gdal netCDF4 mscorefonts matplotlib cartopy geopandas libgdal-arrow-parquet pyearth
+   conda install -c conda-forge jupyterlab cmake make numpy gdal netCDF4 mscorefonts matplotlib cartopy geopandas libgdal-arrow-parquet python-dotenv pyearth
+   ```
+
+- Optional: copy the `.env.example` file to `.env` and update it with paths specific to your local environment.
+
+   ```bash
+   cp .env.example .env
    ```
 
 - Run the examples within the `example` folder.
@@ -79,4 +85,3 @@ You can use QGIS to visualize some of the model results.
 * Liao et al., (2023). pyflowline: a mesh-independent river network generator for hydrologic models. Journal of Open Source Software, 8(91), 5446, https://doi.org/10.21105/joss.05446
 
 * Liao. C. (2022). Pyflowline: a mesh independent river network generator for hydrologic models. Zenodo. https://doi.org/10.5281/zenodo.6407299
-
