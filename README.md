@@ -18,26 +18,38 @@ You can use QGIS to visualize some of the model results.
 
 # Step-by-step instruction
 
-1. Create a conda environment named `pyflowline`, and install the `pyflowline` package.
-
-  ```bash
-  conda create --name pyflowline -c conda-forge python pyflowline
-  conda activate pyflowline
-  conda install -c conda-forge numpy gdal matplotlib cartopy geopandas netCDF4
-  ```
-
-2. Download this tutorial.
+- Download this tutorial.
 
    ```bash
    git clone https://github.com/changliao1025/pyflowline_tutorial.git
+   cd pyflowline_tutorial
    ```
 
-3. Run the examples within the `example` folder.
+- Create a conda environment named `pyflowline_tutorial`, and install the `pyflowline` package.
 
-   - Edit the template `configuration` json file to match with your data set paths.
-   - View and visualize model output files.
-   - View normal json file using any text editor such as VS Code.
-   - Visualize `geojson` files using `QGIS`.
+   ```bash
+   # Recommended: use the provided environment.yml file:
+   conda env create -f environment.yml
+   conda activate pyflowline_tutorial
+
+   # By hand:
+   conda create --name pyflowline_tutorial -c conda-forge python pyflowline
+   conda activate pyflowline_tutorial
+   conda install -c conda-forge jupyterlab cmake make numpy gdal netCDF4 mscorefonts matplotlib cartopy geopandas libgdal-arrow-parquet python-dotenv pyearth
+   ```
+
+- Optional: copy the `.env.example` file to `.env` and update it with paths specific to your local environment.
+
+   ```bash
+   cp .env.example .env
+   ```
+
+- Run the examples within the `example` folder.
+  - Edit the template `configuration` json files to match with your data set paths.
+
+- View and visualize model output files.
+  - View normal json files using any text editor such as VS Code.
+  - Visualize `geojson` files using `QGIS`.
 
 # FAQ
 
@@ -73,4 +85,3 @@ You can use QGIS to visualize some of the model results.
 * Liao et al., (2023). pyflowline: a mesh-independent river network generator for hydrologic models. Journal of Open Source Software, 8(91), 5446, https://doi.org/10.21105/joss.05446
 
 * Liao. C. (2022). Pyflowline: a mesh independent river network generator for hydrologic models. Zenodo. https://doi.org/10.5281/zenodo.6407299
-

@@ -1,4 +1,4 @@
-name: pyflowline
+name: pyflowline_tutorial
 channels:
   - conda-forge
 dependencies:
@@ -8,10 +8,12 @@ dependencies:
   - make
   - numpy
   - gdal
+  - netCDF4
   - mscorefonts 
   - matplotlib
   - cartopy
   - geopandas
   - libgdal-arrow-parquet
+  - python-dotenv
   - pyearth=0.1.26
   - pyflowline=0.3.10
